@@ -1,0 +1,10 @@
+<div class="container-fluid">
+ <h3>List of All Journeys</h3>
+  <% @journeys.each do |journey| %>
+    <ul class="list-group">
+    <li class="list-group-item list-group-primary  journey"><a href="/create_journey_blog/<%= journey.id %>"> <%= journey.title %> on <%= journey.date %></a></li>
+    <p> 
+  </p>
+
+  <% end %>
+</div>

@@ -1,0 +1,75 @@
+<div class="container-fluid">
+
+  <h2>Journey: <%= @journey.title %></h2> 
+  <h3>What places have you visited?</h3>
+
+  <form action="/journeys/<%=@journey_id %>" method="post" enctype="multipart/form-data">
+
+    <%# <label for="">Location</label>
+    <input type="text"name="location">
+
+    <label for="">Description</label>
+    <input type="text"name="description">
+
+    <label for="">Image</label>
+    <input type="file" name="image">
+    
+    <button>Add</button> %>
+
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputLocation">Location</label>
+        <input type="text" class="form-control"name="location">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputLocation">Description</label>
+        <input type="text" class="form-control" name="description">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputImage">Image</label>
+        <input class="form-control-file" type="file" name="image">
+      </div>
+      
+  </div>
+      <button class="btn btn-outline-primary">Add</button>
+
+  </form>
+
+    
+ <div class="container place-container">
+  
+    <div class="row">
+
+    <% @places.each do |place| %>
+    <div class="col-md-6 place-info">
+      <p><%= place.description%></p>
+      <img class="image-uploaded img-fluid place-img" src="<%= place.image.url%>" alt="<%= place.description%>">
+
+      <form action="/place/<%= place.id %>" method="post">
+        <input type="hidden"name="_method" value="delete">
+        <div>
+          <button class="btn btn-outline-primary">delete</button>
+        </div>
+   
+      </form>
+    
+  </div>
+  <% end%>
+</div>
+</div>
+
+  <div class="next-btn">
+    <button class="btn btn-outline-primary btn-lg next-btn"><a href="/journeys/<%= @journey_id %>/meals/new">Next</a></button>
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+

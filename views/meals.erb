@@ -1,0 +1,52 @@
+<div class="container-fluid">
+
+  <h2>Journey: <%= @journey.title %></h2> 
+
+<h3>what food do you have?</h3>
+
+<form action="/journeys/<%= @journey.id %>/meal" method="post" enctype="multipart/form-data">
+
+  <div class="form-row">
+      
+      <div class="form-group col-md-8">
+        <label for="inputLocation">Description</label>
+        <input type="text" class="form-control" name="description">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputImage">Image</label>
+        <input class="form-control-file" type="file" name="image">
+      </div>
+      
+  </div>
+      <button class="btn btn-outline-primary">Add</button>
+
+</form>
+
+<div class="container meal-container">
+  
+    <div class="row">
+    <% @meals.each do |meal| %>
+      <div class="col-md-6 meal-info">
+        <p><%= meal.description%></p>
+        <img class="image-uploaded img-fluid" src="<%= meal.image.url%>" alt="<%= meal.description%>">
+        <form action="/meal/<%= meal.id %>" method="post">
+        <input type="hidden"name="_method" value="delete">
+
+          <button class="btn btn-outline-primary">delete</button>
+          
+        </form>
+
+      </div>
+<% end%>
+    </div>
+  </div>
+
+
+
+
+
+  <button class="btn btn-primary btn-lg btn-block create-blog"><a href="/create_journey_blog/<%= @journey.id %>">Create Your Blog Now</a></button>
+
+
+
+

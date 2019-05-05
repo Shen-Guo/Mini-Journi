@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Mini-Journi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/slide.css">
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+<nav>
+   <% if sign_in?  %>
+   <div>
+    <p>Welcome: <%= current_user.email %></p>
+    <ul class="nav nav-tab container"> 
+      <li class="nav-item "><a class="nav-link" href="/journeys">My Journeys</a></li>
+      <li class="nav-item "><a class="nav-link"href="/new_journey">New Journey</a></li>
+   </div>
+   <div class="logout-btn">
+    <form action="/session" method="post">
+      <input type="hidden"name="_method" value="delete">
+      <button class="btn btn-info" >logout</button>
+    </form>
+   
+   </div>
+  <% end %>
+</nav>
+
+  <%= yield %>
+
+  
+<footer>&copy 2019 </footer>
+
+</body>
+</html>

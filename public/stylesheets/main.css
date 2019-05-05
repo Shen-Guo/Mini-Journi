@@ -1,0 +1,77 @@
+body{
+  background-color:#d6e4e4;
+}
+
+h1,h2,h3,p,a{
+  color:#2e1363;
+}
+.index-heading{
+  text-align: center;
+  color: #0e0c6d;
+}
+.sign-in{
+  float:right;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+}
+.place-container-blog{
+  display: flex;
+  justify-content: space-between;
+}
+.place{
+  width: 40%;
+}
+.place img{
+
+  width:100%
+}
+.map{
+  width: 40%;
+}
+
+.place div{
+
+  width:100%
+}
+
+.journey{
+  background-color: #d6e4e4;
+}
+.create-blog{
+  margin-top:2em;
+}
+.next-btn{
+  margin-top:2em;
+}
+
+.place-info-blog{
+  width:50%;
+}
+.map{
+  width:50%;
+}
+.place-info-blog img{
+  width:95%;
+}
+
+.meal-info-blog img{
+  width:100%;
+}
+.meal-container{
+  margin: 0;
+  
+}
+
+.place-info img{
+  width:100%;
+}
+.place-container{
+  margin: 0;
+  padding: 0;
+}
+.map img{
+  width:95%;
+}
+

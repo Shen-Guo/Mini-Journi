@@ -1,0 +1,58 @@
+   <script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEAPIKEY"] %>&sensor=false"></script>
+  <script src="/javascripts/blog.js"></script>
+<div class="container-fluid">
+
+  <h2>Journey: <%= @journey.title %></h2> 
+  <p>Date : <%= @journey.date %></p>
+
+  <p>I have an amazing trip today!</p>
+
+  <% if @journey.places.count > 0 %>
+    <p>I  have visited </p>
+    <% @journey.places.each do |place| %>
+    <div class="place-container-blog">
+      <div class="place-info-blog">
+        <p><%= place.description%></p>
+        <img class="image-uploaded img-fluid place-img" src="<%= place.image.url%>" alt="<%= place.description%>">
+      </div>
+
+      <div class="map">
+        <p>map:</p>
+        <div class="googleMap" style="width:250px;height:250px;"></div>
+        <script>
+        addMap(<%= place.lng%>,<%= place.lat%>);
+        </script>
+      </div>
+
+    </div>
+    <% end %>
+    
+  <% end %>
+
+
+
+  <% if @journey.meals.count > 0 %>
+    <p>I love the yammy food: </p>
+    <div class="container-fluid meal-container">
+    
+      <div class="row"> 
+        <% @journey.meals.each do |meal| %>
+   
+        <div class="meal-container meal-info-blog col-md-6">
+          <p><%= meal.description%></p>
+          <img class="image-uploaded img-fluid mel-info-img" src="<%= meal.image.url%>" alt="<%= meal.description%>">
+
+       </div>
+    
+        <% end %>
+    </div>  
+  </div>
+  <% end %>
+
+
+</div>
+  
+ 
+
+
+
