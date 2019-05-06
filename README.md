@@ -42,10 +42,13 @@ And I progressed on the pojects, I also add more column to different tables to m
 Need to have a clear concept of what the pros and cons of different database to decide what type and structure suit the app.
 
 #### 3 google API pass in parameters
-The google map API is quite straitforward to use, get the API KEY and follow the config.
+The google map API is quite straitforward to use, get the API KEY and follow the config.Then you have the map div in your app.
+The difficult part is to pass in a parameter like address and then use it in the google map to show the location.I have add a few column in my places table of database, including loaction,lat and lng.
+the lat and lng is obtained behind the scene by talking to google geocoding through ruby httparty. and then pass the lat and lng through js function.
 
 
 #### 4 file upload using carrierwave
+
 
 
 
