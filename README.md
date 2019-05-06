@@ -13,7 +13,7 @@ just record this little by little while having the trip, things are mush easier.
 app will put everthing together for you! Awesome!
 
 
-##  view project here: 
+##  view project here:[mini-journi](https://mini-journi.herokuapp.com/) 
 
 ## Project Progress
 #### Day 1 
@@ -62,8 +62,8 @@ the lat and lng is obtained behind the scene by talking to google geocoding thro
 
 
 ## Things need to impprove
-can add one photo each time
-
+can add only one photo each time
+need edit function
 
 
 
