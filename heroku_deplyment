@@ -1,0 +1,8 @@
+sign up for heroku free account
+
+install heroku for ubantu
+sudo snap install heroku --classic
+
+inside your project file create file called Gemfile;
+
+list all the config for your app
